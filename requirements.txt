@@ -1,0 +1,32 @@
+# --- Data Handling & Cleaning ---
+pandas==2.2.3
+numpy==1.26.4
+requests
+
+# --- Database (MySQL + ORM) ---
+mysql-connector-python==9.0.0
+SQLAlchemy==2.0.34
+mysqlclient
+pymysql
+
+
+# --- NLP & Embeddings ---
+sentence-transformers==3.1.1
+scikit-learn==1.5.2
+
+# --- Vector Database (for RAG) ---
+chromadb==0.5.5
+
+
+# --- LLM / Inference (Open-source models) ---
+transformers==4.45.2
+accelerate==0.34.2
+torch==2.4.1
+datasets==3.0.2
+
+# --- API & Deployment ---
+fastapi==0.115.0
+
+
+# --- Containerization ---
+docker==7.1.0  # (used for local Docker automation scripts)
