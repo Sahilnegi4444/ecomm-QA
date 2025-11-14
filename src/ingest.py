@@ -1,5 +1,5 @@
 from sqlalchemy import create_engine, text
-import logging
+from src.logger import logging
 import pandas as pd
 
 class DataIngestionConfig:
@@ -9,16 +9,18 @@ class DataIngestionConfig:
 class DataIngestor:
     def __init__(self):
         self.ingestion_config = DataIngestionConfig()
-        self.engine = create_engine(self.config.DATABASE_URL)
+        self.engine = create_engine(self.ingestion_config.DATABASE_URL)
         
-    def load_data(self,limit = None):
+    def load_data(self, limit = None):
         try:
-            with self.ingestion_config.engine.connect() as conn:
+            with self.engine.connect() as conn:
                 logging.info("Loading data from database")
                 
-                # Check total rows
-                query = conn.execute(text("SELECT * FROM amazon_dataframe"))
-                df = pd.read_sql(query, self.engine)
+                # Check the df
+                query = text("SELECT * FROM amazon_dataframe LIMIT :limit")
+                
+
+                df = pd.read_sql(query, conn, params={"limit":limit})
 
                 logging.info(f"Loaded: {len(df):,} rows")
 
@@ -30,5 +32,5 @@ class DataIngestor:
 if __name__=='__main__':
     ingestor = DataIngestor()
     df = ingestor.load_data(limit=10000)
-    print(df.head())
+    print(df.head(10))
 

@@ -1,6 +1,6 @@
 import pandas as pd
 from sentence_transformers import SentenceTransformer
-import logging
+from src.logger import logging
 
 class EmbeddingsConfig:
     pass
