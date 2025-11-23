@@ -30,9 +30,9 @@ class Retreiver:
         context = "Relevent products:\n"
 
         for i, meta in enumerate(results['metadatas'][0]):
-              context += f"{i+1}. {meta['product_title']}\n"
-              context += f"       {meta['product_title']}\n"
-              context += f"       {meta['product_title']}\n"
-              context += f"       {meta['product_title']}\n"
+              context += f"{i+1}. Product: {meta['product_title']}\n"
+              context += f"Category: {meta['category']}\n"
+              context += f"Ratings :{meta['rating']}\n"
+              context += f"Price :{meta['price']}\n"
 
         return context

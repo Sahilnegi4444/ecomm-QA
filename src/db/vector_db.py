@@ -8,9 +8,12 @@ from src.logger import logging
 
 
 class VectorDB:
-    def __init__(self):
-        self.client = chromadb.Client()
-        logging.info("Chroma DB initialized")
+    def __init__(self, persist_directory="./chroma_db"):
+
+        os.makedirs(persist_directory, exist_ok=True)
+
+        self.client = chromadb.PersistentClient(path=persist_directory)
+        logging.info("Chroma DB initialized at {persist_directory}")
 
 
     def create_collection(self, products:pd.DataFrame, embeddings, collection_name = 'products'):

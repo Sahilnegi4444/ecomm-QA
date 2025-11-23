@@ -1,0 +1,7 @@
+import os
+
+# Search for chroma.sqlite3 files
+for root, dirs, files in os.walk('.'):
+    for file in files:
+        if file == 'chroma.sqlite3':
+            print(f"Found ChromaDB at: {os.path.join(root, file)}")
