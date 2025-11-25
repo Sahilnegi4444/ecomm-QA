@@ -1,11 +1,11 @@
 import requests
 from src.logger import logging
 
-class LLMconfig:
+class LLMConfig:
     def __init__(self):
         pass  
 
-class LLMchat:
+class LLMChat:
     def __init__(self, use_ollama = True):
         self.use_ollama = use_ollama
 
@@ -40,5 +40,5 @@ class LLMchat:
             return response.json()['response']
 
         except Exception as e:
-            raise str(e)
+            raise e
 

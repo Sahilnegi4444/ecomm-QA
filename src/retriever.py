@@ -1,7 +1,7 @@
 from src.logger import logging
 from sentence_transformers import SentenceTransformer
 
-class Retreiver:
+class Retriever:
     def __init__(self, collection, model_name = 'all-MiniLM-L6-v2'):
          self.collection = collection
          self.model = SentenceTransformer(model_name)
