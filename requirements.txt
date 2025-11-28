@@ -25,7 +25,8 @@ torch==2.4.1
 datasets==3.0.2
 
 # --- API & Deployment ---
-fastapi==0.115.0
+fastapi
+uvicorn
 
 
 # --- Containerization ---
