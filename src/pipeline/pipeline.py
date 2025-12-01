@@ -2,7 +2,7 @@ from src.ingest import DataIngestor
 from src.processing.preprocessing import PreProcessing
 from src.embeddings.embeddings import CreateEmbeddings
 from src.db.vector_db import VectorDB
-from src.retriever import Retreiver
+from src.retriever import Retriever
 
 from src.logger import logging
 

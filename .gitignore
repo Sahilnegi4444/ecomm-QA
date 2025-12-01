@@ -131,3 +131,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.chroma_db/
+chroma_db/
+chroma_db
