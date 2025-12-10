@@ -30,10 +30,10 @@ class Chatbot:
 
         """Handle follow-up question with memory"""
         product_context = self._format_products_context()
-        
+                
         convo_context = "\n".join(
             f"User: {turn['user']}\nAssistant: {turn['bot']}"
-            for turn in self.convo_memory[-5:]
+            for turn in self.convo_memory[-5:]                                  #checks the last 5 conversation in the memory
         )
 
         prompt = f""" 

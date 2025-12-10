@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from src.rag_pipeline.chatbot import Chatbot
 from src.db.vector_db import VectorDB
 from src.logger import logging
+from fastapi.middleware.cors import CORSMiddleware
 
 # Global collection and chatbot session storage
 collection = None
@@ -61,6 +62,15 @@ app = FastAPI(
     description="Chatbot using Llama model + RAG",
     version="1.0.0",
     lifespan=lifespan
+)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
