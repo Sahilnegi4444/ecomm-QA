@@ -164,8 +164,8 @@ function displayProducts(products) {
         card.className = "productCard";
         card.innerHTML = `
             <h4>${product.title}</h4>
-            <p><strong>Rating:</strong> ⭐ ${product.rating}/5</p>
-            <p><strong>Price:</strong> $${product.price}</p>
+            <p><strong>Rating:</strong> ⭐ ${product.rating.toFixed(0)}/5</p>
+            <p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
             <small><strong>Category:</strong> ${product.category}</small>
         `;
         container.appendChild(card);

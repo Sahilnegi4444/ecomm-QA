@@ -91,6 +91,7 @@ async def chat(request: ChatRequest):
     
     chatbot = chatbot_sessions[request.session_id]
     
+    
     # Generate response using RAG pipeline
     response_text, results = chatbot.chat(request.query, k=request.k)
     
