@@ -29,8 +29,8 @@ class DataIngestor:
         except Exception as e:
             raise e
 
-if __name__=='__main__':
-    ingestor = DataIngestor()
-    df = ingestor.load_data(limit=10000)
-    print(df.head(10))
+# if __name__=='__main__':
+#     ingestor = DataIngestor()
+#     df = ingestor.load_data(limit=150000)
+#     print(df.head(10))
 

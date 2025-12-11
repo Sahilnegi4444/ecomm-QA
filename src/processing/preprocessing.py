@@ -72,21 +72,21 @@ class PreProcessing:
         except Exception as e:
             raise e
         
-if __name__ == "__main__":
-    from src.ingest import DataIngestor
-    from src.processing.preprocessing import PreProcessing
+# if __name__ == "__main__":
+#     from src.ingest import DataIngestor
+#     from src.processing.preprocessing import PreProcessing
 
-    ingestor = DataIngestor()
-    df = ingestor.load_data(limit=1000)
+#     ingestor = DataIngestor()
+#     df = ingestor.load_data(limit=150000)
 
-    preprocessor = PreProcessing()
-    products = preprocessor.group_products(df)
-    products = preprocessor.prepare_for_embeddings(products)
+#     preprocessor = PreProcessing()
+#     products = preprocessor.group_products(df)
+#     products = preprocessor.prepare_for_embeddings(products)
 
-    #generate embeddings
-    from src.embeddings.embeddings import CreateEmbeddings
+#     #generate embeddings
+#     from src.embeddings.embeddings import CreateEmbeddings
 
-    generate_embeddings = CreateEmbeddings()
-    embeddings = generate_embeddings.create_embeddings(products = products)
+#     generate_embeddings = CreateEmbeddings()
+#     embeddings = generate_embeddings.create_embeddings(products = products)
 
-    print(f"Generated embeddings shape {embeddings.shape}")
+#     print(f"Generated embeddings shape {embeddings.shape}")

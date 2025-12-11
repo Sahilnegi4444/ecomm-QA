@@ -50,6 +50,6 @@ def run_pipeline(limit = None):
         traceback.print_exc()
 
 if __name__ == "__main__":
-    products, embeddings, collection = run_pipeline(limit=10000)
+    products, embeddings, collection = run_pipeline(limit=150000)
 
     

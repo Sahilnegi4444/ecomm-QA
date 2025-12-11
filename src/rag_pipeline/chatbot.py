@@ -10,7 +10,7 @@ class Chatbot:
 
         self.convo_memory = []          #conversation memory for chatbot
         self.last_products = []         #last products
-        self.last_results = None        #store full results
+        self.last_results = None        #store full resultsz
 
     def is_followup(self, user_query):
 
@@ -88,15 +88,30 @@ class Chatbot:
         product_context = self._format_products_context()
 
         # Step 3: Create prompt for LLM
-        prompt = f"""You are a helpful e-commerce shopping assistant. Answer the customer's question using the product information provided.
+        prompt = f"""You are an expert e-commerce shopping assistant. Use only the product information provided below 
+        to answer the customer’s question. Do not use outside knowledge.
 
         Customer Question: "{user_query}"
 
         Available Products (numbered):
         {product_context}
 
-        Recommend the best items using their numbers (1, 2, 3...) 
-        and explain why you picked them. Be specific about features, ratings, and prices."""
+        Your task:
+        - Recommend only the most relevant products.
+        - Refer to each recommended product by its number (1, 2, 3…).
+        - Explain *why* each product fits the customer's needs using details such as:
+        • key features
+        • rating
+        • price
+        • category
+        - If you are not recommending a product, DO NOT say anything negative about it.
+        - If none of the products fit well, politely say that you cannot recommend from the given list.
+
+        Response style:
+        - Friendly, clear, and concise.
+        - Organized into short sections or bullet points.
+        - Absolutely NO fabricated information.
+        """
         
         
         #Step4: Generate response 
