@@ -1,3 +1,7 @@
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109.0-green.svg)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)
+![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
 # ecomm-QA
 End to End  Ecomm QA pipeline where customers can ask about the products and get recommendations
 
